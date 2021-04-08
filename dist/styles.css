@@ -1,3 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1.125rem;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "nav nav" "header header" "grow grow" "flowing flowing" "users users" "sign-up sign-up" "footer footer";
+}
 
 /*# sourceMappingURL=styles.css.map */
