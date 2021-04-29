@@ -5,19 +5,19 @@ $font-size: (
     large: 1.125rem // 18px
 );
 
+
 $breakpoints: (
-    small: 48em, // 768px
-    medium: 64em // 1024px
+  small: 48em, // 768px
+  medium: 64em // 1024px
 );
 
 $colors: (
-    pink: hsl(322, 100%, 66%),
-    veryPaleCyan: hsl(193, 100%, 96%),
-    veryDarkCyan: hsl(192, 100%, 9%),
-    grayishBlue: hsl(208, 11%, 55%)
+  pink: hsl(322, 100%, 66%),
+  veryPaleCyan: hsl(193, 100%, 96%),
+  veryDarkCyan: hsl(192, 100%, 9%),
+  grayishBlue: hsl(208, 11%, 55%),
 );
 
-// functions
-@function rem($pixels, $context: 18) {
-    @return ($pixels / $context) * 1rem;
+@function rem($pixels) {
+  @return ($pixels / 18) * 1rem;
 }

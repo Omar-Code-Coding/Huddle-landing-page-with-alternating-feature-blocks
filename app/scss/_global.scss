@@ -1,39 +1,55 @@
 @use 'abstracts' as *;
 @use 'sass:map';
 
-* { 
-   margin: 0;
-   padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 *::before,
 *::after {
-   box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-   box-sizing: border-box;
-   font-size: map-get($font-size, large);
+  box-sizing: border-box;
+  font-size: map-get($font-size, large);
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
 }
 
 .wrapper {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-template-areas: "nav nav"
-                        "header header"
-                        "grow grow"
-                        "flowing flowing"
-                        "users users"
-                        "sign-up sign-up"
-                        "footer footer";
-   // justify-items: center;
+  display: grid;
+  grid-template-columns: 5.124vw 89.752vw 5.124vw;
+  grid-template-areas:
+    "header-m header-m header-m"
+    ". cards-m ."
+    ". footer-m .";
+  // justify-items: center;
+  height: 100vh;
+}
+
+h1, h2,
+ h3, h4,
+  h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: map-get($colors, veryDarkCyan);
+}
+
+button {
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: rem(50);
+  box-shadow: 0 rem(3) rem(4) rgba(0, 0, 0, 0.397);
 }

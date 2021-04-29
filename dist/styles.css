@@ -15,6 +15,7 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
 }
 
 .wrapper {
@@ -24,8 +25,100 @@ body {
 
 .container {
   display: grid;
+  grid-template-columns: 5.124vw 89.752vw 5.124vw;
+  grid-template-areas: "header-m header-m header-m" ". cards-m ." ". footer-m .";
+  height: 100vh;
+}
+
+h1, h2,
+h3, h4,
+h5, h6 {
+  font-family: "Poppins", sans-serif;
+  color: #00252e;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: 2.7777777778rem;
+  box-shadow: 0 0.1666666667rem 0.2222222222rem rgba(0, 0, 0, 0.397);
+}
+
+.header-container {
+  display: grid;
+  grid-area: header-m;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "nav nav" "header header" "grow grow" "flowing flowing" "users users" "sign-up sign-up" "footer footer";
+  grid-template-areas: "header header" "hero hero-img";
+  grid-gap: 1.6666666667rem 3.8333333333rem;
+  padding: 0 5.124vw;
+  background-image: url(/images/bg-hero-desktop.svg);
+  background-color: #ebfbff;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  height: clamp(2.3437vh, 4.1666vh, 1.777rem);
+}
+.header__btn {
+  padding: 1.0555555556rem 3.7777777778rem;
+  background-color: white;
+  color: #00252e;
+}
+
+.hero {
+  grid-area: hero;
+  justify-self: center;
+  align-self: center;
+  max-width: 28.3888888889rem;
+}
+.hero__heading {
+  font-size: 1.7777777778rem;
+  padding-right: 4.3333333333rem;
+}
+.hero__sub-heading {
+  margin: 2.7777777778rem 0 2.2222222222rem 0;
+  color: #00252e;
+}
+.hero__btn {
+  padding: 1.2777777778rem 4rem;
+  background-color: #ff52bf;
+  color: #ebfbff;
+}
+
+.hero-img {
+  grid-area: hero-img;
+  width: 50.22vw;
+}
+
+.cards-container {
+  display: grid;
+  grid-area: cards-m;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 4.947vh;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2.8888888889rem 0;
+  border-radius: 0.2777777778rem;
+  box-shadow: 0 0 0.5555555556rem rgba(0, 0, 0, 0.295);
+}
+.card-wrapper__text {
+  max-width: 27.2222222222rem;
+}
+.card-wrapper__img {
+  width: 30.527vw;
 }
 
 /*# sourceMappingURL=styles.css.map */
