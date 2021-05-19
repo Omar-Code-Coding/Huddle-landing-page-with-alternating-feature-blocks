@@ -1,27 +1,37 @@
 @use 'abstracts' as *;
 
 .cards-container {
+    grid-area: cards;
     display: grid;
-    grid-area: cards-m;
     grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 4.947vh;
+    row-gap: 4.947vh;
+    margin: 21vh 0 12vh 0;
 }
 
 .card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    
-    padding: rem(52) 0;
+    @include flex (row wrap, flex-end, center,
+            clamp(3.52rem, 12.67%, 3.47rem)
+            clamp(3.52rem, 44.34%, 10.8rem));
+    max-width: rem(1234);
+    padding: clamp(3.05rem, 12.44%, 3.13rem) clamp(2.02rem, 3.11%, 2.13rem);  
     border-radius: rem(5);
     box-shadow: 0 0 rem(10) rgba(0, 0, 0, 0.295);
 
+    @media screen and (max-width: map-get($map: $breakpoints, $key: medium)) {
+        justify-content: center;
+    }
+
     &__text {
         max-width: rem(490);
+        @media screen and (max-width: map-get($map: $breakpoints, $key: medium)) {
+            order: 2; 
+        }
     }
 
     &__img {
-        width: 30.527vw;
+        width: clamp(13.2rem, 33.02%, 22.2rem);
+        @media screen and (max-width: map-get($map: $breakpoints, $key: medium)) {
+            order: 1;
+        }
     }
 }

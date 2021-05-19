@@ -13,28 +13,29 @@
 
 html {
   box-sizing: border-box;
-  font-size: map-get($font-size, large);
+  font-size: clamp(.625rem, 1.25vw, 1.125rem);
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
+  margin: 0 auto;
+  
+  @media screen and (max-width: map-get($map: $breakpoints, $key: small)) {
+    text-align: center;
+  }
 }
 
-.wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.container {
+.page-wrapper {
   display: grid;
-  grid-template-columns: 5.124vw 89.752vw 5.124vw;
+  grid-template-rows: max-content .25fr;
+  padding: 0 clamp(1.13rem ,7.2%, 5.7rem);
   grid-template-areas:
-    "header-m header-m header-m"
-    ". cards-m ."
-    ". footer-m .";
-  // justify-items: center;
-  height: 100vh;
+    "cards"
+    "get-started";
+  justify-items: center;
+  // position: relative;
 }
 
 h1, h2,
@@ -52,4 +53,21 @@ button {
   border: 0;
   border-radius: rem(50);
   box-shadow: 0 rem(3) rem(4) rgba(0, 0, 0, 0.397);
+  color: map-get($colors, veryPaleCyan);
+  background-color: map-get($colors, pink);
+  transition: .1s;
+
+  &:hover {
+    transform: translateY(-10%);
+    opacity: .5;
+  }
+}
+
+a {
+  color: map-get($map: $colors, $key: veryPaleCyan);
+  text-decoration: 0;
+
+  &:hover {
+    text-decoration: underline ;
+  }
 }
